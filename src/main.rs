@@ -35,7 +35,7 @@ fn main() -> std::io::Result<()> {
         std::process::exit(1);
     });
 
-    println!("{:?}", response_json);
+    println!("response_json = {:?}", response_json);
 
     Ok(())
 }
