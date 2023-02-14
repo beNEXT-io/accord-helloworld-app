@@ -1,16 +1,81 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "definitions": {
-    "org.accordproject.helloworld.MyRequest": {
-      "title": "MyRequest",
-      "description": "An instance of org.accordproject.helloworld.MyRequest",
-      "type": "object",
+    "org.accordproject.contract.Clause": {
+      "description": "An instance of org.accordproject.contract.Clause",
       "properties": {
         "$class": {
-          "type": "string",
+          "default": "org.accordproject.contract.Clause",
+          "description": "The class identifier for org.accordproject.contract.Clause",
+          "pattern": "^org\\.accordproject\\.contract\\.Clause$",
+          "type": "string"
+        },
+        "clauseId": {
+          "description": "The instance identifier for this type",
+          "type": "string"
+        }
+      },
+      "required": [
+        "$class",
+        "clauseId"
+      ],
+      "title": "Clause",
+      "type": "object"
+    },
+    "org.accordproject.contract.Contract": {
+      "description": "An instance of org.accordproject.contract.Contract",
+      "properties": {
+        "$class": {
+          "default": "org.accordproject.contract.Contract",
+          "description": "The class identifier for org.accordproject.contract.Contract",
+          "pattern": "^org\\.accordproject\\.contract\\.Contract$",
+          "type": "string"
+        },
+        "contractId": {
+          "description": "The instance identifier for this type",
+          "type": "string"
+        }
+      },
+      "required": [
+        "$class",
+        "contractId"
+      ],
+      "title": "Contract",
+      "type": "object"
+    },
+    "org.accordproject.helloworld.HelloWorldClause": {
+      "description": "An instance of org.accordproject.helloworld.HelloWorldClause",
+      "properties": {
+        "$class": {
+          "default": "org.accordproject.helloworld.HelloWorldClause",
+          "description": "The class identifier for org.accordproject.helloworld.HelloWorldClause",
+          "pattern": "^org\\.accordproject\\.helloworld\\.HelloWorldClause$",
+          "type": "string"
+        },
+        "clauseId": {
+          "description": "The instance identifier for this type",
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "$class",
+        "name",
+        "clauseId"
+      ],
+      "title": "HelloWorldClause",
+      "type": "object"
+    },
+    "org.accordproject.helloworld.MyRequest": {
+      "description": "An instance of org.accordproject.helloworld.MyRequest",
+      "properties": {
+        "$class": {
           "default": "org.accordproject.helloworld.MyRequest",
+          "description": "The class identifier for org.accordproject.helloworld.MyRequest",
           "pattern": "^org\\.accordproject\\.helloworld\\.MyRequest$",
-          "description": "The class identifier for org.accordproject.helloworld.MyRequest"
+          "type": "string"
         },
         "input": {
           "type": "string"
@@ -19,18 +84,18 @@
       "required": [
         "$class",
         "input"
-      ]
+      ],
+      "title": "MyRequest",
+      "type": "object"
     },
     "org.accordproject.helloworld.MyResponse": {
-      "title": "MyResponse",
       "description": "An instance of org.accordproject.helloworld.MyResponse",
-      "type": "object",
       "properties": {
         "$class": {
-          "type": "string",
           "default": "org.accordproject.helloworld.MyResponse",
+          "description": "The class identifier for org.accordproject.helloworld.MyResponse",
           "pattern": "^org\\.accordproject\\.helloworld\\.MyResponse$",
-          "description": "The class identifier for org.accordproject.helloworld.MyResponse"
+          "type": "string"
         },
         "output": {
           "type": "string"
@@ -39,155 +104,120 @@
       "required": [
         "$class",
         "output"
-      ]
-    },
-    "org.accordproject.helloworld.HelloWorldClause": {
-      "title": "HelloWorldClause",
-      "description": "An instance of org.accordproject.helloworld.HelloWorldClause",
-      "type": "object",
-      "properties": {
-        "$class": {
-          "type": "string",
-          "default": "org.accordproject.helloworld.HelloWorldClause",
-          "pattern": "^org\\.accordproject\\.helloworld\\.HelloWorldClause$",
-          "description": "The class identifier for org.accordproject.helloworld.HelloWorldClause"
-        },
-        "name": {
-          "type": "string"
-        },
-        "clauseId": {
-          "type": "string",
-          "description": "The instance identifier for this type"
-        }
-      },
-      "required": [
-        "$class",
-        "name",
-        "clauseId"
-      ]
-    },
-    "org.accordproject.runtime.Request": {
-      "title": "Request",
-      "description": "An instance of org.accordproject.runtime.Request",
-      "type": "object",
-      "properties": {
-        "$class": {
-          "type": "string",
-          "default": "org.accordproject.runtime.Request",
-          "pattern": "^org\\.accordproject\\.runtime\\.Request$",
-          "description": "The class identifier for org.accordproject.runtime.Request"
-        }
-      },
-      "required": [
-        "$class"
-      ]
-    },
-    "org.accordproject.runtime.Response": {
-      "title": "Response",
-      "description": "An instance of org.accordproject.runtime.Response",
-      "type": "object",
-      "properties": {
-        "$class": {
-          "type": "string",
-          "default": "org.accordproject.runtime.Response",
-          "pattern": "^org\\.accordproject\\.runtime\\.Response$",
-          "description": "The class identifier for org.accordproject.runtime.Response"
-        }
-      },
-      "required": [
-        "$class"
-      ]
+      ],
+      "title": "MyResponse",
+      "type": "object"
     },
     "org.accordproject.runtime.Obligation": {
-      "title": "Obligation",
       "description": "An instance of org.accordproject.runtime.Obligation",
-      "type": "object",
       "properties": {
         "$class": {
-          "type": "string",
           "default": "org.accordproject.runtime.Obligation",
+          "description": "The class identifier for org.accordproject.runtime.Obligation",
           "pattern": "^org\\.accordproject\\.runtime\\.Obligation$",
-          "description": "The class identifier for org.accordproject.runtime.Obligation"
+          "type": "string"
         },
         "contract": {
-          "type": "string",
-          "description": "The identifier of an instance of org.accordproject.contract.Contract"
-        },
-        "promisor": {
-          "type": "string",
-          "description": "The identifier of an instance of concerto@1.0.0.Participant"
-        },
-        "promisee": {
-          "type": "string",
-          "description": "The identifier of an instance of concerto@1.0.0.Participant"
+          "description": "The identifier of an instance of org.accordproject.contract.Contract",
+          "type": "string"
         },
         "deadline": {
           "format": "date-time",
+          "type": "string"
+        },
+        "promisee": {
+          "description": "The identifier of an instance of concerto@1.0.0.Participant",
+          "type": "string"
+        },
+        "promisor": {
+          "description": "The identifier of an instance of concerto@1.0.0.Participant",
           "type": "string"
         }
       },
       "required": [
         "$class",
         "contract"
-      ]
+      ],
+      "title": "Obligation",
+      "type": "object"
     },
-    "org.accordproject.runtime.State": {
-      "title": "State",
-      "description": "An instance of org.accordproject.runtime.State",
-      "type": "object",
+    "org.accordproject.runtime.Request": {
+      "description": "An instance of org.accordproject.runtime.Request",
       "properties": {
         "$class": {
-          "type": "string",
-          "default": "org.accordproject.runtime.State",
-          "pattern": "^org\\.accordproject\\.runtime\\.State$",
-          "description": "The class identifier for org.accordproject.runtime.State"
+          "default": "org.accordproject.runtime.Request",
+          "description": "The class identifier for org.accordproject.runtime.Request",
+          "pattern": "^org\\.accordproject\\.runtime\\.Request$",
+          "type": "string"
         }
       },
       "required": [
         "$class"
-      ]
+      ],
+      "title": "Request",
+      "type": "object"
     },
-    "org.accordproject.contract.Contract": {
-      "title": "Contract",
-      "description": "An instance of org.accordproject.contract.Contract",
-      "type": "object",
+    "org.accordproject.runtime.Response": {
+      "description": "An instance of org.accordproject.runtime.Response",
       "properties": {
         "$class": {
-          "type": "string",
-          "default": "org.accordproject.contract.Contract",
-          "pattern": "^org\\.accordproject\\.contract\\.Contract$",
-          "description": "The class identifier for org.accordproject.contract.Contract"
-        },
-        "contractId": {
-          "type": "string",
-          "description": "The instance identifier for this type"
+          "default": "org.accordproject.runtime.Response",
+          "description": "The class identifier for org.accordproject.runtime.Response",
+          "pattern": "^org\\.accordproject\\.runtime\\.Response$",
+          "type": "string"
         }
       },
       "required": [
-        "$class",
-        "contractId"
-      ]
+        "$class"
+      ],
+      "title": "Response",
+      "type": "object"
     },
-    "org.accordproject.contract.Clause": {
-      "title": "Clause",
-      "description": "An instance of org.accordproject.contract.Clause",
-      "type": "object",
+    "org.accordproject.runtime.State": {
+      "description": "An instance of org.accordproject.runtime.State",
       "properties": {
         "$class": {
-          "type": "string",
-          "default": "org.accordproject.contract.Clause",
-          "pattern": "^org\\.accordproject\\.contract\\.Clause$",
-          "description": "The class identifier for org.accordproject.contract.Clause"
-        },
-        "clauseId": {
-          "type": "string",
-          "description": "The instance identifier for this type"
+          "default": "org.accordproject.runtime.State",
+          "description": "The class identifier for org.accordproject.runtime.State",
+          "pattern": "^org\\.accordproject\\.runtime\\.State$",
+          "type": "string"
         }
       },
       "required": [
-        "$class",
-        "clauseId"
-      ]
+        "$class"
+      ],
+      "title": "State",
+      "type": "object"
     }
-  }
+  },
+  "properties": {
+    "MyRequest": {
+      "$ref": "#/definitions/org.accordproject.helloworld.MyRequest"
+    },
+    "clause": {
+      "$ref": "#/definitions/org.accordproject.contract.Clause"
+    },
+    "contract": {
+      "$ref": "#/definitions/org.accordproject.contract.Contract"
+    },
+    "helloWorldClause": {
+      "$ref": "#/definitions/org.accordproject.helloworld.HelloWorldClause"
+    },
+    "myResponse": {
+      "$ref": "#/definitions/org.accordproject.helloworld.MyResponse"
+    },
+    "obligation": {
+      "$ref": "#/definitions/org.accordproject.runtime.Obligation"
+    },
+    "request": {
+      "$ref": "#/definitions/org.accordproject.runtime.Request"
+    },
+    "response": {
+      "$ref": "#/definitions/org.accordproject.runtime.Response"
+    },
+    "state": {
+      "$ref": "#/definitions/org.accordproject.runtime.State"
+    }
+  },
+  "type": "object"
 }

@@ -1,185 +1,139 @@
 use serde::{Deserialize, Serialize};
 
-#[derive(Serialize, Deserialize)]
-pub struct Welcome {
-    #[serde(rename = "$schema")]
-    schema: String,
-    definitions: Definitions,
+#[derive(Debug, Serialize, Deserialize)]
+pub struct Helloworld {
+    #[serde(rename = "clause")]
+    pub clause: Option<Clause>,
+
+    #[serde(rename = "contract")]
+    pub contract: Option<Contract>,
+
+    #[serde(rename = "helloWorldClause")]
+    pub hello_world_clause: Option<HelloWorldClause>,
+
+    #[serde(rename = "MyRequest")]
+    pub my_request: Option<MyRequest>,
+
+    #[serde(rename = "myResponse")]
+    pub my_response: Option<MyResponse>,
+
+    #[serde(rename = "obligation")]
+    pub obligation: Option<Obligation>,
+
+    #[serde(rename = "request")]
+    pub request: Option<Request>,
+
+    #[serde(rename = "response")]
+    pub response: Option<Response>,
+
+    #[serde(rename = "state")]
+    pub state: Option<State>,
 }
 
-#[derive(Serialize, Deserialize)]
-pub struct Definitions {
-    #[serde(rename = "org.accordproject.helloworld.MyRequest")]
-    org_accordproject_helloworld_my_request: OrgAccordprojectHelloworldMyRequest,
-    #[serde(rename = "org.accordproject.helloworld.MyResponse")]
-    org_accordproject_helloworld_my_response: OrgAccordprojectHelloworldMyResponse,
-    #[serde(rename = "org.accordproject.helloworld.HelloWorldClause")]
-    org_accordproject_helloworld_hello_world_clause: OrgAccordprojectHelloworldHelloWorldClause,
-    #[serde(rename = "org.accordproject.runtime.Request")]
-    org_accordproject_runtime_request: OrgAccordprojectRuntime,
-    #[serde(rename = "org.accordproject.runtime.Response")]
-    org_accordproject_runtime_response: OrgAccordprojectRuntime,
-    #[serde(rename = "org.accordproject.runtime.Obligation")]
-    org_accordproject_runtime_obligation: OrgAccordprojectRuntimeObligation,
-    #[serde(rename = "org.accordproject.runtime.State")]
-    org_accordproject_runtime_state: OrgAccordprojectRuntime,
-    #[serde(rename = "org.accordproject.contract.Contract")]
-    org_accordproject_contract_contract: OrgAccordprojectContractContract,
-    #[serde(rename = "org.accordproject.contract.Clause")]
-    org_accordproject_contract_clause: OrgAccordprojectContractClause,
-}
-
-#[derive(Serialize, Deserialize)]
-pub struct OrgAccordprojectContractClause {
-    title: String,
-    description: String,
-    #[serde(rename = "type")]
-    org_accordproject_contract_clause_type: String,
-    properties: OrgAccordprojectContractClauseProperties,
-    required: Vec<String>,
-}
-
-#[derive(Serialize, Deserialize)]
-pub struct OrgAccordprojectContractClauseProperties {
+/// An instance of org.accordproject.contract.Clause
+#[derive(Debug, Serialize, Deserialize)]
+pub struct Clause {
+    /// The class identifier for org.accordproject.contract.Clause
     #[serde(rename = "$class")]
-    class: Class,
+    pub class: String,
+
+    /// The instance identifier for this type
     #[serde(rename = "clauseId")]
-    clause_id: ClauseId,
+    pub clause_id: String,
 }
 
-#[derive(Serialize, Deserialize)]
-pub struct Class {
-    #[serde(rename = "type")]
-    class_type: String,
-    #[serde(rename = "default")]
-    class_default: String,
-    pattern: String,
-    description: String,
-}
-
-#[derive(Serialize, Deserialize)]
-pub struct ClauseId {
-    #[serde(rename = "type")]
-    clause_id_type: String,
-    description: String,
-}
-
-#[derive(Serialize, Deserialize)]
-pub struct OrgAccordprojectContractContract {
-    title: String,
-    description: String,
-    #[serde(rename = "type")]
-    org_accordproject_contract_contract_type: String,
-    properties: OrgAccordprojectContractContractProperties,
-    required: Vec<String>,
-}
-
-#[derive(Serialize, Deserialize)]
-pub struct OrgAccordprojectContractContractProperties {
+/// An instance of org.accordproject.contract.Contract
+#[derive(Debug, Serialize, Deserialize)]
+pub struct Contract {
+    /// The class identifier for org.accordproject.contract.Contract
     #[serde(rename = "$class")]
-    class: Class,
+    pub class: String,
+
+    /// The instance identifier for this type
     #[serde(rename = "contractId")]
-    contract_id: ClauseId,
+    pub contract_id: String,
 }
 
-#[derive(Serialize, Deserialize)]
-pub struct OrgAccordprojectHelloworldHelloWorldClause {
-    title: String,
-    description: String,
-    #[serde(rename = "type")]
-    org_accordproject_helloworld_hello_world_clause_type: String,
-    properties: OrgAccordprojectHelloworldHelloWorldClauseProperties,
-    required: Vec<String>,
-}
-
-#[derive(Serialize, Deserialize)]
-pub struct OrgAccordprojectHelloworldHelloWorldClauseProperties {
+/// An instance of org.accordproject.helloworld.HelloWorldClause
+#[derive(Debug, Serialize, Deserialize)]
+pub struct HelloWorldClause {
+    /// The class identifier for org.accordproject.helloworld.HelloWorldClause
     #[serde(rename = "$class")]
-    class: Class,
-    name: Name,
+    pub class: String,
+
+    /// The instance identifier for this type
     #[serde(rename = "clauseId")]
-    clause_id: ClauseId,
+    pub clause_id: String,
+
+    #[serde(rename = "name")]
+    pub name: String,
 }
 
-#[derive(Serialize, Deserialize)]
-pub struct Name {
-    #[serde(rename = "type")]
-    name_type: String,
-}
-
-#[derive(Serialize, Deserialize)]
-pub struct OrgAccordprojectHelloworldMyRequest {
-    title: String,
-    description: String,
-    #[serde(rename = "type")]
-    org_accordproject_helloworld_my_request_type: String,
-    properties: OrgAccordprojectHelloworldMyRequestProperties,
-    required: Vec<String>,
-}
-
-#[derive(Serialize, Deserialize)]
-pub struct OrgAccordprojectHelloworldMyRequestProperties {
+/// An instance of org.accordproject.helloworld.MyRequest
+#[derive(Debug, Serialize, Deserialize)]
+pub struct MyRequest {
+    /// The class identifier for org.accordproject.helloworld.MyRequest
     #[serde(rename = "$class")]
-    class: Class,
-    input: Name,
+    pub class: String,
+
+    #[serde(rename = "input")]
+    pub input: String,
 }
 
-#[derive(Serialize, Deserialize)]
-pub struct OrgAccordprojectHelloworldMyResponse {
-    title: String,
-    description: String,
-    #[serde(rename = "type")]
-    org_accordproject_helloworld_my_response_type: String,
-    properties: OrgAccordprojectHelloworldMyResponseProperties,
-    required: Vec<String>,
-}
-
-#[derive(Serialize, Deserialize)]
-pub struct OrgAccordprojectHelloworldMyResponseProperties {
+/// An instance of org.accordproject.helloworld.MyResponse
+#[derive(Debug, Serialize, Deserialize)]
+pub struct MyResponse {
+    /// The class identifier for org.accordproject.helloworld.MyResponse
     #[serde(rename = "$class")]
-    class: Class,
-    output: Name,
+    pub class: String,
+
+    #[serde(rename = "output")]
+    pub output: String,
 }
 
-#[derive(Serialize, Deserialize)]
-pub struct OrgAccordprojectRuntimeObligation {
-    title: String,
-    description: String,
-    #[serde(rename = "type")]
-    org_accordproject_runtime_obligation_type: String,
-    properties: OrgAccordprojectRuntimeObligationProperties,
-    required: Vec<String>,
-}
-
-#[derive(Serialize, Deserialize)]
-pub struct OrgAccordprojectRuntimeObligationProperties {
+/// An instance of org.accordproject.runtime.Obligation
+#[derive(Debug, Serialize, Deserialize)]
+pub struct Obligation {
+    /// The class identifier for org.accordproject.runtime.Obligation
     #[serde(rename = "$class")]
-    class: Class,
-    contract: ClauseId,
-    promisor: ClauseId,
-    promisee: ClauseId,
-    deadline: Deadline,
+    pub class: String,
+
+    /// The identifier of an instance of org.accordproject.contract.Contract
+    #[serde(rename = "contract")]
+    pub contract: String,
+
+    #[serde(rename = "deadline")]
+    pub deadline: Option<String>,
+
+    /// The identifier of an instance of concerto@1.0.0.Participant
+    #[serde(rename = "promisee")]
+    pub promisee: Option<String>,
+
+    /// The identifier of an instance of concerto@1.0.0.Participant
+    #[serde(rename = "promisor")]
+    pub promisor: Option<String>,
 }
 
-#[derive(Serialize, Deserialize)]
-pub struct Deadline {
-    format: String,
-    #[serde(rename = "type")]
-    deadline_type: String,
-}
-
-#[derive(Serialize, Deserialize)]
-pub struct OrgAccordprojectRuntime {
-    title: String,
-    description: String,
-    #[serde(rename = "type")]
-    org_accordproject_runtime_type: String,
-    properties: OrgAccordprojectRuntimeRequestProperties,
-    required: Vec<String>,
-}
-
-#[derive(Serialize, Deserialize)]
-pub struct OrgAccordprojectRuntimeRequestProperties {
+/// An instance of org.accordproject.runtime.Request
+#[derive(Debug, Serialize, Deserialize)]
+pub struct Request {
+    /// The class identifier for org.accordproject.runtime.Request
     #[serde(rename = "$class")]
-    class: Class,
+    pub class: String,
+}
+
+/// An instance of org.accordproject.runtime.Response
+#[derive(Debug, Serialize, Deserialize)]
+pub struct Response {
+    /// The class identifier for org.accordproject.runtime.Response
+    #[serde(rename = "$class")]
+    pub class: String,
+}
+
+/// An instance of org.accordproject.runtime.State
+#[derive(Debug, Serialize, Deserialize)]
+pub struct State {
+    /// The class identifier for org.accordproject.runtime.State
+    #[serde(rename = "$class")]
+    pub class: String,
 }

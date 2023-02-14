@@ -1,11 +1,4 @@
 {
-    "$class": {
-        "type": "string",
-        "default": "org.accordproject.helloworld.MyRequest",
-        "pattern": "^org\\.accordproject\\.helloworld\\.MyRequest$",
-        "description": "The class identifier for org.accordproject.helloworld.MyRequest"
-    },
-    "input": {
-        "type": "Accord Project"
-    }
+    "$class": "org.accordproject.helloworld.MyRequest",
+    "input": "Tech Working Group"
 }
