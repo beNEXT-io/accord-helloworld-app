@@ -203,7 +203,7 @@
     "helloWorldClause": {
       "$ref": "#/definitions/org.accordproject.helloworld.HelloWorldClause"
     },
-    "myResponse": {
+    "MyResponse": {
       "$ref": "#/definitions/org.accordproject.helloworld.MyResponse"
     },
     "obligation": {

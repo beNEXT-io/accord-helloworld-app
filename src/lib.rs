@@ -1,7 +1,7 @@
 use serde::{Deserialize, Serialize};
 
 #[derive(Debug, Serialize, Deserialize)]
-pub struct Helloworld {
+pub struct HelloWorld {
     #[serde(rename = "clause")]
     pub clause: Option<Clause>,
 
@@ -14,7 +14,7 @@ pub struct Helloworld {
     #[serde(rename = "MyRequest")]
     pub my_request: Option<MyRequest>,
 
-    #[serde(rename = "myResponse")]
+    #[serde(rename = "MyResponse")]
     pub my_response: Option<MyResponse>,
 
     #[serde(rename = "obligation")]
