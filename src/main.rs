@@ -1,7 +1,7 @@
 use std::fs::File;
 use std::io::Read;
 
-use helloworld::{MyRequest, MyResponse};
+use helloworld::org_accordproject_helloworld::*;
 
 fn main() -> std::io::Result<()> {
     // Pull the json request object from file.
@@ -24,7 +24,7 @@ fn main() -> std::io::Result<()> {
 
     // Create a response object
     let response = MyResponse {
-        class: "org.accordproject.helloworld.MyResponse".to_owned(),
+        class: r#"org.accordproject.helloworld.MyResponse"#.to_owned(),
         output,
     };
 
