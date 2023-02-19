@@ -20,21 +20,18 @@ pub struct Obligation {
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct Request {
-    /// The class identifier for org.accordproject.runtime.Request
     #[serde(rename = "$class")]
     pub class: String,
 }
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct Response {
-    /// The class identifier for org.accordproject.runtime.Response
     #[serde(rename = "$class")]
     pub class: String,
 }
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct State {
-    /// The class identifier for org.accordproject.runtime.State
     #[serde(rename = "$class")]
     pub class: String,
 }

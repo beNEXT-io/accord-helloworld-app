@@ -3,10 +3,8 @@ use serde::{Deserialize, Serialize};
 use crate::org_accordproject_contract::*;
 use crate::org_accordproject_runtime::*;
 
-/// An instance of org.accordproject.helloworld.MyRequest
 #[derive(Debug, Serialize, Deserialize)]
 pub struct MyRequest {
-    /// The class identifier for org.accordproject.helloworld.MyRequest
     #[serde(rename = "$class")]
     pub class: String,
 
@@ -14,10 +12,8 @@ pub struct MyRequest {
     pub input: String,
 }
 
-/// An instance of org.accordproject.helloworld.MyResponse
 #[derive(Debug, Serialize, Deserialize)]
 pub struct MyResponse {
-    /// The class identifier for org.accordproject.helloworld.MyResponse
     #[serde(rename = "$class")]
     pub class: String,
 
@@ -25,14 +21,11 @@ pub struct MyResponse {
     pub output: String,
 }
 
-/// An instance of org.accordproject.helloworld.HelloWorldClause
 #[derive(Debug, Serialize, Deserialize)]
 pub struct HelloWorldClause {
-    /// The class identifier for org.accordproject.helloworld.HelloWorldClause
     #[serde(rename = "$class")]
     pub class: String,
 
-    /// The instance identifier for this type
     #[serde(rename = "clauseId")]
     pub clause_id: String,
 
