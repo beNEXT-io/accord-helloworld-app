@@ -1,6 +1,9 @@
 pub mod concerto_1_0_0;
 pub mod concerto;
-pub mod org_accordproject_helloworld;
-pub mod org_accordproject_contract;
-pub mod org_accordproject_runtime;
+pub mod org_accordproject_acceptanceofdelivery_0_15_0;
+pub mod org_accordproject_contract_0_2_0;
+pub mod org_accordproject_runtime_0_2_0;
+pub mod org_accordproject_address_0_2_0;
+pub mod org_accordproject_geo_0_2_0;
+pub mod org_accordproject_organization_0_2_0;
 pub mod utils;

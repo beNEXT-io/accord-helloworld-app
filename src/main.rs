@@ -1,7 +1,7 @@
 use std::fs::File;
 use std::io::Read;
 
-use helloworld::org_accordproject_helloworld::*;
+use helloworld::org_accordproject_acceptanceofdelivery_0_15_0::*;
 
 fn main() -> std::io::Result<()> {
     // Pull the json request object from file.
@@ -13,30 +13,17 @@ fn main() -> std::io::Result<()> {
     println!("request_json = {}", request_json);
 
     // Deserialise MyRequest
-    let request: MyRequest = serde_json::from_str(&request_json).unwrap_or_else(|err| {
+    let request: InspectDeliverable = serde_json::from_str(&request_json).unwrap_or_else(|err| {
         // Ooops!  Didn't work - display an error and exit.
         eprintln!("Error: {}", err);
         std::process::exit(1);
     });
 
     // Construct output string.
-    let output = format!("Hello Fred Blogs {}", &request.input);
+    let output = format!("Hello Fred Blogs {}", &request.class);
 
-    // Create a response object
-    let response = MyResponse {
-        class: r#"org.accordproject.helloworld.MyResponse"#.to_owned(),
-        output,
-        timestamp: request.timestamp
-    };
 
-    // Serialise response
-    let response_json = serde_json::to_string(&response).unwrap_or_else(|err| {
-        // Ooops!  Didn't work - display an error and exit.
-        eprintln!("Error: {}", err);
-        std::process::exit(1);
-    });
-
-    println!("response_json = {:?}", response_json);
+    println!("response_json = {:?}", output);
 
     Ok(())
 }

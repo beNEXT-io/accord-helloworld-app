@@ -1,5 +1,6 @@
 {
-    "$class": "org.accordproject.helloworld.MyRequest",
-    "input": "Tech Working Group",
+    "$class": "org.accordproject.acceptanceofdelivery.InspectDeliverable",
+    "deliverableReceivedAt": "2023-04-12T08:40:26.112Z",
+    "inspectionPassed": false,
     "$timestamp": "2023-04-12T08:40:26.112Z"
 }
