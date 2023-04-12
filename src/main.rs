@@ -26,6 +26,7 @@ fn main() -> std::io::Result<()> {
     let response = MyResponse {
         class: r#"org.accordproject.helloworld.MyResponse"#.to_owned(),
         output,
+        timestamp: request.timestamp
     };
 
     // Serialise response

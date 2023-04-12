@@ -1,71 +1,69 @@
 use serde::{ Deserialize, Serialize };
 use chrono::{ DateTime, TimeZone, Utc };
    
-use crate::org_accordproject_contract::*;
-use crate::org_accordproject_runtime::*;
-use crate::concerto_1_0_0::*;
 use crate::utils::*;
    
 #[derive(Debug, Serialize, Deserialize)]
-pub struct MyRequest {
+pub struct Concept {
    #[serde(
       rename = "$class",
    )]
    pub class: String,
-   
-   #[serde(
-      rename = "input",
-   )]
-   pub input: String,
-   
-   #[serde(
-      rename = "$timestamp",
-      serialize_with = "serialize_datetime",
-      deserialize_with = "deserialize_datetime",
-   )]
-   pub timestamp: DateTime<Utc>,
 }
 
 #[derive(Debug, Serialize, Deserialize)]
-pub struct MyResponse {
+pub struct Asset {
    #[serde(
       rename = "$class",
    )]
    pub class: String,
-   
-   #[serde(
-      rename = "output",
-   )]
-   pub output: String,
-   
-   #[serde(
-      rename = "$timestamp",
-      serialize_with = "serialize_datetime",
-      deserialize_with = "deserialize_datetime",
-   )]
-   pub timestamp: DateTime<Utc>,
-}
-
-#[derive(Debug, Serialize, Deserialize)]
-pub struct HelloWorldClause {
-   #[serde(
-      rename = "$class",
-   )]
-   pub class: String,
-   
-   #[serde(
-      rename = "name",
-   )]
-   pub name: String,
-   
-   #[serde(
-      rename = "clauseId",
-   )]
-   pub clause_id: String,
    
    #[serde(
       rename = "$identifier",
    )]
    pub identifier: String,
+}
+
+#[derive(Debug, Serialize, Deserialize)]
+pub struct Participant {
+   #[serde(
+      rename = "$class",
+   )]
+   pub class: String,
+   
+   #[serde(
+      rename = "$identifier",
+   )]
+   pub identifier: String,
+}
+
+#[derive(Debug, Serialize, Deserialize)]
+pub struct Transaction {
+   #[serde(
+      rename = "$class",
+   )]
+   pub class: String,
+   
+   #[serde(
+      rename = "$timestamp",
+      serialize_with = "serialize_datetime",
+      deserialize_with = "deserialize_datetime",
+   )]
+   pub timestamp: DateTime<Utc>,
+}
+
+#[derive(Debug, Serialize, Deserialize)]
+pub struct Event {
+   #[serde(
+      rename = "$class",
+   )]
+   pub class: String,
+   
+   #[serde(
+      rename = "$timestamp",
+      serialize_with = "serialize_datetime",
+      deserialize_with = "deserialize_datetime",
+   )]
+   pub timestamp: DateTime<Utc>,
 }
 
