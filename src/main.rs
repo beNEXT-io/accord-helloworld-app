@@ -1,7 +1,7 @@
 use std::fs::File;
 use std::io::Read;
-
-use helloworld::org_accordproject_acceptanceofdelivery_0_15_0::*;
+mod lib;
+use lib::org_accordproject_acceptanceofdelivery_0_15_0::*;
 
 fn main() -> std::io::Result<()> {
     // Pull the json request object from file.
@@ -21,7 +21,6 @@ fn main() -> std::io::Result<()> {
 
     // Construct output string.
     let output = format!("Hello Fred Blogs {}", &request.class);
-
 
     println!("response_json = {:?}", output);
 

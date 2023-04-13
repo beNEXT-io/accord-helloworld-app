@@ -1,8 +1,8 @@
 use serde::{ Deserialize, Serialize };
 use chrono::{ DateTime, TimeZone, Utc };
    
-use crate::concerto_1_0_0::*;
-use crate::utils::*;
+use crate::lib::concerto_1_0_0::*;
+use crate::lib::utils::*;
    
 #[derive(Debug, Serialize, Deserialize)]
 pub struct Contract {

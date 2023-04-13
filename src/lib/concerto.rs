@@ -1,7 +1,7 @@
 use serde::{ Deserialize, Serialize };
 use chrono::{ DateTime, TimeZone, Utc };
    
-use crate::utils::*;
+use crate::lib::utils::*;
    
 #[derive(Debug, Serialize, Deserialize)]
 pub struct Concept {
