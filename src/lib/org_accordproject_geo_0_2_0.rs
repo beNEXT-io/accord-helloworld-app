@@ -10,7 +10,7 @@ pub struct GeoCoordinates {
    #[serde(
       rename = "$class",
    )]
-   pub class: String,
+   pub _class: String,
    
    #[serde(
       rename = "address",
@@ -48,7 +48,7 @@ pub struct Place {
    #[serde(
       rename = "$class",
    )]
-   pub class: String,
+   pub _class: String,
    
    #[serde(
       rename = "address",
@@ -104,7 +104,7 @@ pub struct Country {
    #[serde(
       rename = "$class",
    )]
-   pub class: String,
+   pub _class: String,
    
    #[serde(
       rename = "name",

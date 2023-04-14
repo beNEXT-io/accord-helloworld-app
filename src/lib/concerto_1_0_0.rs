@@ -8,7 +8,7 @@ pub struct Concept {
    #[serde(
       rename = "$class",
    )]
-   pub class: String,
+   pub _class: String,
 }
 
 #[derive(Debug, Serialize, Deserialize)]
@@ -16,12 +16,12 @@ pub struct Asset {
    #[serde(
       rename = "$class",
    )]
-   pub class: String,
+   pub _class: String,
    
    #[serde(
       rename = "$identifier",
    )]
-   pub identifier: String,
+   pub _identifier: String,
 }
 
 #[derive(Debug, Serialize, Deserialize)]
@@ -29,12 +29,12 @@ pub struct Participant {
    #[serde(
       rename = "$class",
    )]
-   pub class: String,
+   pub _class: String,
    
    #[serde(
       rename = "$identifier",
    )]
-   pub identifier: String,
+   pub _identifier: String,
 }
 
 #[derive(Debug, Serialize, Deserialize)]
@@ -42,14 +42,14 @@ pub struct Transaction {
    #[serde(
       rename = "$class",
    )]
-   pub class: String,
+   pub _class: String,
    
    #[serde(
       rename = "$timestamp",
       serialize_with = "serialize_datetime",
       deserialize_with = "deserialize_datetime",
    )]
-   pub timestamp: DateTime<Utc>,
+   pub _timestamp: DateTime<Utc>,
 }
 
 #[derive(Debug, Serialize, Deserialize)]
@@ -57,13 +57,13 @@ pub struct Event {
    #[serde(
       rename = "$class",
    )]
-   pub class: String,
+   pub _class: String,
    
    #[serde(
       rename = "$timestamp",
       serialize_with = "serialize_datetime",
       deserialize_with = "deserialize_datetime",
    )]
-   pub timestamp: DateTime<Utc>,
+   pub _timestamp: DateTime<Utc>,
 }
 

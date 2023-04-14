@@ -10,14 +10,14 @@ pub struct Request {
    #[serde(
       rename = "$class",
    )]
-   pub class: String,
+   pub _class: String,
    
    #[serde(
       rename = "$timestamp",
       serialize_with = "serialize_datetime",
       deserialize_with = "deserialize_datetime",
    )]
-   pub timestamp: DateTime<Utc>,
+   pub _timestamp: DateTime<Utc>,
 }
 
 #[derive(Debug, Serialize, Deserialize)]
@@ -25,14 +25,14 @@ pub struct Response {
    #[serde(
       rename = "$class",
    )]
-   pub class: String,
+   pub _class: String,
    
    #[serde(
       rename = "$timestamp",
       serialize_with = "serialize_datetime",
       deserialize_with = "deserialize_datetime",
    )]
-   pub timestamp: DateTime<Utc>,
+   pub _timestamp: DateTime<Utc>,
 }
 
 #[derive(Debug, Serialize, Deserialize)]
@@ -40,12 +40,12 @@ pub struct Obligation {
    #[serde(
       rename = "$class",
    )]
-   pub class: String,
+   pub _class: String,
    
    #[serde(
       rename = "$identifier",
    )]
-   pub identifier: String,
+   pub _identifier: String,
    
    #[serde(rename = "contract")]
    pub contract: Contract,
@@ -69,7 +69,7 @@ pub struct Obligation {
       serialize_with = "serialize_datetime",
       deserialize_with = "deserialize_datetime",
    )]
-   pub timestamp: DateTime<Utc>,
+   pub _timestamp: DateTime<Utc>,
 }
 
 #[derive(Debug, Serialize, Deserialize)]
@@ -77,11 +77,11 @@ pub struct State {
    #[serde(
       rename = "$class",
    )]
-   pub class: String,
+   pub _class: String,
    
    #[serde(
       rename = "$identifier",
    )]
-   pub identifier: String,
+   pub _identifier: String,
 }
 

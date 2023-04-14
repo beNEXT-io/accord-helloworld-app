@@ -12,7 +12,7 @@ pub struct InspectDeliverable {
    #[serde(
       rename = "$class",
    )]
-   pub class: String,
+   pub _class: String,
    
    #[serde(
       rename = "deliverableReceivedAt",
@@ -31,7 +31,7 @@ pub struct InspectDeliverable {
       serialize_with = "serialize_datetime",
       deserialize_with = "deserialize_datetime",
    )]
-   pub timestamp: DateTime<Utc>,
+   pub _timestamp: DateTime<Utc>,
 }
 
 #[derive(Debug, Serialize, Deserialize)]
@@ -46,7 +46,7 @@ pub struct InspectionResponse {
    #[serde(
       rename = "$class",
    )]
-   pub class: String,
+   pub _class: String,
    
    #[serde(
       rename = "status",
@@ -64,7 +64,7 @@ pub struct InspectionResponse {
       serialize_with = "serialize_datetime",
       deserialize_with = "deserialize_datetime",
    )]
-   pub timestamp: DateTime<Utc>,
+   pub _timestamp: DateTime<Utc>,
 }
 
 #[derive(Debug, Serialize, Deserialize)]
@@ -72,7 +72,7 @@ pub struct AcceptanceOfDeliveryClause {
    #[serde(
       rename = "$class",
    )]
-   pub class: String,
+   pub _class: String,
    
    #[serde(rename = "shipper")]
    pub shipper: Organization,
@@ -103,6 +103,6 @@ pub struct AcceptanceOfDeliveryClause {
    #[serde(
       rename = "$identifier",
    )]
-   pub identifier: String,
+   pub _identifier: String,
 }
 

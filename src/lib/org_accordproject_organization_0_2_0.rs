@@ -10,7 +10,12 @@ pub struct Organization {
    #[serde(
       rename = "$class",
    )]
-   pub class: String,
+   pub _class: String,
+   
+   #[serde(
+      rename = "identifier",
+   )]
+   pub identifier: String,
    
    #[serde(
       rename = "name",
@@ -39,6 +44,6 @@ pub struct Organization {
    #[serde(
       rename = "$identifier",
    )]
-   pub identifier: String,
+   pub _identifier: String,
 }
 

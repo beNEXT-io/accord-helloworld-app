@@ -9,7 +9,7 @@ pub struct Contract {
    #[serde(
       rename = "$class",
    )]
-   pub class: String,
+   pub _class: String,
    
    #[serde(
       rename = "contractId",
@@ -19,7 +19,7 @@ pub struct Contract {
    #[serde(
       rename = "$identifier",
    )]
-   pub identifier: String,
+   pub _identifier: String,
 }
 
 #[derive(Debug, Serialize, Deserialize)]
@@ -27,7 +27,7 @@ pub struct Clause {
    #[serde(
       rename = "$class",
    )]
-   pub class: String,
+   pub _class: String,
    
    #[serde(
       rename = "clauseId",
@@ -37,6 +37,6 @@ pub struct Clause {
    #[serde(
       rename = "$identifier",
    )]
-   pub identifier: String,
+   pub _identifier: String,
 }
 
