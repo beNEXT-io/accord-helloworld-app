@@ -1,10 +1,6 @@
 {
-    "$class": "org.accordproject.acceptanceofdelivery.AcceptanceOfDeliveryClause",
-    "shipper": "resource:org.accordproject.organization.Organization#Party%20A",
-    "receiver": "resource:org.accordproject.organization.Organization#Party%20B",
-    "deliverable": "Widgets",
-    "businessDays": 10,
-    "attachment": "Attachment X",
-    "clauseId": "16ddc768-3847-4fc6-a7e4-9b7d94c020dd",
-    "$identifier": "16ddc768-3847-4fc6-a7e4-9b7d94c020dd"
+    "$class": "org.accordproject.acceptanceofdelivery.InspectDeliverable",
+    "deliverableReceivedAt": "2021-04-27T13:10:12.792-04:00",
+    "inspectionPassed": false,
+    "$timestamp": "2021-04-27T13:10:12.792-04:00"
 }
