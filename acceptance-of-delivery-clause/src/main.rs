@@ -31,7 +31,7 @@ fn get_relationship_as_json(name:&serde_json::Value) -> std::io::Result<serde_js
 
 fn main() -> std::io::Result<()> {
     // Pull the json request object from file.
-    let mut file = File::open("./model/request.json")?;
+    let mut file = File::open("./acceptance-of-delivery-clause/model/request.json")?;
     let mut request_json = String::new();
     file.read_to_string(&mut request_json)?;
 
