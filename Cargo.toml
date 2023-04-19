@@ -1,4 +1,5 @@
 [workspace]
 members = [
     "acceptance-of-delivery-clause",
+    "incorporation-certificate",
 ]
