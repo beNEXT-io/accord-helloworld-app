@@ -1,0 +1,5 @@
+{
+    "$class": "org.accordproject.signature.ContractSigned",
+    "contract": "MY_CONTRACT",
+    "$timestamp": "2021-04-27T13:10:39.136-04:00"
+}
