@@ -1,5 +1,5 @@
 {
     "$class": "org.accordproject.signature.ContractSigned",
-    "contract": "MY_CONTRACT",
+    "contract": "resource:org.accordproject.payment.fulluponsignature.FullPaymentUponSignatureContract#5599",
     "$timestamp": "2021-04-27T13:10:39.136-04:00"
 }
