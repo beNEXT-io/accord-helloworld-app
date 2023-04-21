@@ -1,10 +1,6 @@
 use std::fs::File;
 use std::io::Read;
-mod lib;
-use lib::org_accordproject_incorporation::*;
 use lib::org_accordproject_signature::*;
-use serde_json::json;
-use std::process::Command;
 
 fn get_relationship_as_json(name:&serde_json::Value) -> std::io::Result<serde_json::Value>  {
 

@@ -1,8 +1,6 @@
 use std::fs::File;
 use std::io::Read;
-mod lib;
 use lib::org_accordproject_copyrightlicense::*;
-use serde_json::json;
 use std::process::Command;
 
 

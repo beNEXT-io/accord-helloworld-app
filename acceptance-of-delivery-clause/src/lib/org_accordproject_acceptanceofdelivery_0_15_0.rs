@@ -1,11 +1,11 @@
 use serde::{ Deserialize, Serialize };
 use chrono::{ DateTime, TimeZone, Utc };
    
-use crate::lib::org_accordproject_contract_0_2_0::*;
-use crate::lib::org_accordproject_runtime_0_2_0::*;
-use crate::lib::org_accordproject_organization_0_2_0::*;
-use crate::lib::concerto_1_0_0::*;
-use crate::lib::utils::*;
+use crate::org_accordproject_contract_0_2_0::*;
+use crate::org_accordproject_runtime_0_2_0::*;
+use crate::org_accordproject_organization_0_2_0::*;
+use crate::concerto_1_0_0::*;
+use crate::utils::*;
    
 #[derive(Debug, Serialize, Deserialize)]
 pub struct InspectDeliverable {
@@ -36,8 +36,11 @@ pub struct InspectDeliverable {
 
 #[derive(Debug, Serialize, Deserialize)]
 pub enum InspectionStatus {
+   #[allow(non_camel_case_types)]
    PASSED_TESTING,
+   #[allow(non_camel_case_types)]
    FAILED_TESTING,
+   #[allow(non_camel_case_types)]
    OUTSIDE_INSPECTION_PERIOD,
 }
 
