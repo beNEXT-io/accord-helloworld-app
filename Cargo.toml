@@ -2,4 +2,5 @@
 members = [
     "acceptance-of-delivery-clause",
     "incorporation-certificate",
+    "copyright-license",
 ]
