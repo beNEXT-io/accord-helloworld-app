@@ -1,10 +1,10 @@
 use serde::{ Deserialize, Serialize };
 use chrono::{ DateTime, TimeZone, Utc };
    
-use crate::lib::org_accordproject_contract::*;
-use crate::lib::org_accordproject_signature::*;
-use crate::lib::concerto_1_0_0::*;
-use crate::lib::utils::*;
+use crate::org_accordproject_contract::*;
+use crate::org_accordproject_signature::*;
+use crate::concerto_1_0_0::*;
+use crate::utils::*;
    
 #[derive(Debug, Serialize, Deserialize)]
 pub struct IncorporationCertificate {

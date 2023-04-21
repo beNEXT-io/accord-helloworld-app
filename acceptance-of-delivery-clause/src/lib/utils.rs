@@ -28,13 +28,13 @@ where
    D: Deserializer<'de>,
 {
    let datetime_str = String::deserialize(deserializer)?;
-   Utc.datetime_from_str(&datetime_str, "%Y-%m-%dT%H:%M:%S%.3fZ").map_err(serde::de::Error::custom)
+   Utc.datetime_from_str(&datetime_str, "%Y-%m-%dT%H:%M:%S%.3f%Z").map_err(serde::de::Error::custom)
 }
    
 pub fn serialize_datetime<S>(datetime: &chrono::DateTime<Utc>, serializer: S) -> Result<S::Ok, S::Error>
 where
    S: Serializer,
 {
-   let datetime_str = datetime.format("%Y-%m-%dT%H:%M:%S%.3fZ").to_string();
+   let datetime_str = datetime.format("%+").to_string();
    serializer.serialize_str(&datetime_str)
 }

@@ -1,8 +1,6 @@
 use std::fs::File;
 use std::io::Read;
-mod lib;
 use lib::org_accordproject_acceptanceofdelivery_0_15_0::*;
-use serde_json::json;
 use std::process::Command;
 
 fn get_relationship_as_json(name:&serde_json::Value) -> std::io::Result<serde_json::Value>  {
@@ -63,9 +61,6 @@ fn main() -> std::io::Result<()> {
         eprintln!("Error: {}", err);
         std::process::exit(1);
     });
-
-    // Construct output string.
-    let output = format!("Hello Fred Blogs {:?}", &response.deliverable);
 
     println!("response_json = {:?}", response);
 
