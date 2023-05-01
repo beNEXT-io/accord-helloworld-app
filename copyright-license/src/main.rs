@@ -2,6 +2,7 @@ use std::fs::File;
 use std::io::Read;
 use lib::org_accordproject_copyrightlicense::*;
 use std::process::Command;
+use lambda_http::{run, service_fn, Body, Error, Request, Response};
 
 
 fn get_relationship_as_json(name:&serde_json::Value) -> std::io::Result<serde_json::Value>  {
@@ -28,17 +29,12 @@ fn get_relationship_as_json(name:&serde_json::Value) -> std::io::Result<serde_js
 
 }
 
-
-fn main() -> std::io::Result<()> {
-    // Pull the json request object from file.
+async fn function_handler(_: Request) -> Result<Response<Body>, Error> {
+       // Pull the json request object from file.
     let mut file = File::open("./copyright-license/model/request.json")?;
     let mut request_json = String::new();
     file.read_to_string(&mut request_json)?;
 
-    // Let's see what we have.
-    println!("request_json = {}", request_json);
-
-        // Deserialise MyRequest
     let mut request: serde_json::Value = serde_json::from_str(&request_json).unwrap_or_else(|err| {
         // Ooops!  Didn't work - display an error and exit.
         eprintln!("Error: {}", err);
@@ -63,12 +59,27 @@ fn main() -> std::io::Result<()> {
         eprintln!("Error: {}", err);
         std::process::exit(1);
     });
-
-    // Construct output string.
-
-    println!("response_json = {:?}", response);
+    
+    let resp_as_string = serde_json::to_string(&response).unwrap();
 
 
-    Ok(())
+    let resp = Response::builder()
+    .status(200)
+    .header("content-type",  "application/json")
+    .body(resp_as_string.into())
+    .map_err(Box::new)?;
 
+    Ok(resp)
+}
+
+
+#[tokio::main]
+async fn main() -> Result<(), Error> {
+    tracing_subscriber::fmt()
+    .with_max_level(tracing::Level::INFO)
+    .with_target(false)
+    .without_time()
+    .init();
+    
+    run(service_fn(function_handler)).await
 }
